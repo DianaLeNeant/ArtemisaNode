@@ -3,6 +3,8 @@ by Diana Nuño
 
 ###### A complete solution for you.
 
+Artemisa was made for enterprises administration, sales, human resources, and in fact, everything else in the sales enterprise management. This version is still in development and in process to become totally flexible and moldable, adaptive to any kind of enterprise out there.
+
 ### Main architecture description
 
 Artemisa was build in Node.js, this repository is for the main server.
