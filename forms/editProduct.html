@@ -1,0 +1,55 @@
+<legend class="art"><label>Modificación de Producto</label></legend>
+<table>
+    <tr>
+        <td><label>Categoría</label></td>
+        <td><input data-from="Categoria" name="cat" id="cat" type="text" class="required seeker" data-seek='cmm_categoria:Nombre:ID' required/></td>
+    </tr>
+    <tr>
+        <td><label>Subcategoria</label></td>
+        <td><input data-from="Subcategoria" name="scat" id="scat" type="text" class="required seeker" data-seek='cmm_subcategoria:Nombre:ID' required/></td>
+    </tr>
+    <tr>
+        <td><label>Marca</label></td>
+        <td><input data-from="Marca" name="bra" id="bra" type="text" class="required seeker" data-seek='cmm_marca:Nombre:ID' required/></td>
+    </tr>
+    <tr>
+        <td><label>Proveedor</label></td>
+        <td><input data-from="Proveedor" name="prov" id="prov" type="text" class="required seeker" data-seek='cmm_proveedor:Nombre:ID' required/></td>
+    </tr>
+    <tr>
+        <td><label>Clave SAT</label></td>
+        <td><input data-from="SAT" type="text" name="sat" ></input></td>
+    </tr>
+    <tr>
+        <td><label>Clave Interna</label></td>
+        <td><input data-from="Clave" type="text" name="clave" class="required" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Descripción</label></td>
+        <td><textarea data-from="Descripcion" name="desc" class="required" required></textarea></td>
+    </tr>
+    <tr>
+        <td><label>Moneda</label></td>
+        <td><input data-from="Moneda" name="curr" id="curr" type="text" class="required seeker" data-seek='cmm_moneda:Nombre:ID' required/></td>
+    </tr>
+    <tr>
+        <td><label>Costo</label></td>
+        <td><input data-from="Costo" type="text" name="costo" class="required numeric" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Venta en Tienda</label></td>
+        <td><input data-from="VentaTienda" type="text" name="prt" class="required numeric" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Venta en Call Center</label></td>
+        <td><input data-from="VentaCC" type="text" name="prcc" class="required numeric" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Datos</label></td>
+        <td><textarea data-from="Datos" name="dat"></textarea></td>
+    </tr>
+    <tr>
+        <td><label>¿Cobrar IVA por defecto?</label></td>
+        <td><input data-from="IVA" type="checkbox" name="iva" checked/></td>
+    </tr>
+</table>

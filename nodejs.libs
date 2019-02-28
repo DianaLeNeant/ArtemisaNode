@@ -1,0 +1,16 @@
+mysql
+mime-types
+express
+body-parser
+socket.io
+readline
+colors
+multer
+crypto
+html-pdf
+qrcode-generator
+get-json
+money
+
+[ -------- ]
+artemisa libraries - in node_modules

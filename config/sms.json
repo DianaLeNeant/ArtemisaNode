@@ -1,0 +1,9 @@
+{
+    "default": {
+        "apiKey": "",
+        "apiSecret": ""
+    },
+
+    "SMSNexmoNumber": "",
+    "defaultSMSNumberPrefix": "52"
+}

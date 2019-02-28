@@ -1,0 +1,586 @@
+/*
+    .<3 {
+        [de mi hermosa Sarah Jessica Tinoco López] ...
+    }
+*/
+
+body {
+    background-color: #eceff1;
+    background-image: url('media/background.jpg');
+    color: #382763;
+    margin: 1%;
+    line-height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+}
+
+.barcode {
+    height: 29mm;
+    width: 62mm;
+}
+
+section.logo {
+    text-align: right;
+}
+.arlogo {
+    font-family: 'Times New Roman', 'Times', 'serif';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 150%;
+    text-align: right;
+    text-shadow:
+        3px 3px 0 rgb(80, 80, 80),
+        -1px -1px 0 rgb(40, 40, 40),  
+        1px -1px 0 rgb(40, 40, 40),
+        -1px 1px 0 rgb(40, 40, 40),
+        1px 1px 0 rgb(40, 40, 40);
+    align-self: center;
+
+    color: aliceblue;
+    width: 100%;
+    /*margin: 1% 1%;*/
+    background-color: rgba(132, 12, 153, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 0;
+}
+.progress, .progress-bar {
+    height: 30px;
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+span {
+    text-align: right;
+    font-weight: bold;
+    line-height: 200%;
+    /*border-style: dotted;
+    border-color: crimson;*/
+}
+
+legend.default {
+    color: #00a5b8;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+legend.art {
+    color: #05cde5;
+    width: 65%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.acontent {
+    font-size: 12pt;
+    background-color: #05cde5;
+    border-radius: 5px;
+    padding: 10px;
+    color: aliceblue;
+}
+
+/*input, select, textarea {
+    color: #4800ff;
+}*/
+
+.notif {
+    padding: 5px;
+    width: 350px;
+    height: 200px;
+}
+
+.box {
+    color: aliceblue;
+    font-size: 12pt;
+    width: 98%;
+    margin: 1% 1%;
+    background-color: #05cde5;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 0;
+}
+
+.title-green {
+    background-color: #a8eb78;
+    color: rgb(39, 8, 31);
+    font-size: 10pt;
+}
+.title-red {
+    background-color: #e9a948;
+    color: rgb(39, 8, 31);
+    font-size: 10pt;
+}
+
+textarea {
+    height: 100px !important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid rgb(244, 253, 253);
+}
+
+table * {
+    align-self: center;
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: 1px solid #6f4981;
+}
+    table tr:nth-child(even) {
+        background-color: #d1e0e6
+    }
+    tbody tr {
+        background-color: rgb(244, 253, 253);
+        color: rgb(39, 8, 31);
+        font-size: 10pt;
+    }
+
+    td div {
+        border: none;
+    }
+    td div.row {
+        background-color: rgba(4, 249, 236, 0.3);
+        border: 1px solid #6f4981;
+    }
+    td div.col {
+        background-color: rgba(4, 249, 171, 0.3);
+        border: 1px solid #6f4981;
+    }
+    
+
+    td.qnt:hover {
+        background-color: #bbff63;
+    }
+    td.price:hover {
+        background-color: rgb(255, 99, 180);
+    }
+    tbody tr.result:hover {
+        background-color: #63eeff;
+    }
+
+    div>table>thead>tr>th {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+
+        top: 0;
+        z-index: 10;
+    }
+
+    tr.header, thead, th {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid rgb(170, 170, 170);
+        font-weight: bold;
+        font-size: 12pt;
+        color: rgb(250, 243, 234);
+        background-color: rgb(95, 95, 145);
+        text-align: center;
+    }
+
+footer {
+    text-align: right;
+    margin-top: 40px;
+}
+
+/*Lista
+* {
+    margin: 0px;
+    padding: 5px;
+}*/
+
+fieldset#menu {
+    width: 90px;
+    margin-left: 5%;
+    z-index: 1;
+}
+
+section#data {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: left;
+    margin-right: 20px;
+    background-color: #05cde5;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* menu
+ul, ol
+{
+	list-style:none;
+}
+
+.nav > li
+{
+	float: left;
+}
+
+.nav li a
+{
+	background-color:#000000;
+	color:#ffffff;
+	width: 80px;
+	text-decoration:none;
+	border-radius: 15px;
+	padding: 10px;
+	display:block;
+}
+
+.nav li a:hover
+{
+	background-color:#434343;
+}
+
+.nav li ul
+{
+	display:none;
+	position:absolute;
+}
+
+.nav li:hover > ul
+{
+	display:block;
+}
+
+.nav li ul li
+{
+	position:relative;
+}
+
+.nav li ul li ul
+{
+	right:-110px;
+	top:0px;
+}*/
+
+canvas {
+    max-width: 3000px;
+    max-height: 3000px;
+}
+
+a.ar {
+    background-color: rgb(212, 254, 255);
+    padding: 5px;
+    border-radius: 5px;
+    color: #7109a1;
+    line-height: 200%;
+    cursor: pointer;
+}
+    a:hover.ar {
+        background-color: rgb(174, 225, 226);
+        padding: 5px;
+        border-radius: 5px;
+        color: #6f4981;
+    }
+
+span.formal {
+    color: rgb(51, 11, 61);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+/* Popup Image */
+table td img {
+    /*display: none;*/
+    max-height: 200px;
+    max-width: 200px;
+    align-content: center;
+
+    display: block;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Form validation colors */
+.required {
+    border-left: 6px solid red;
+    background-color: lightgrey;
+}
+
+.ui-tabs-vertical { width: 81em; }
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 20em; }
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 60em;}
+.ui-accordion .ui-accordion-content { min-height: 500px; }
+.ui-widget.ui-widget-content {
+    border: none;
+}
+
+.ui-autocomplete {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.loading {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(38, 248, 255, 0.5);
+    z-index: 2;
+    cursor: progress;
+}
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    z-index: 12000;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.l-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    align-content: center;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.treeView {
+    font-size: 10pt;
+    flex: 0;
+    width: fit-content;
+}
+
+.overcon {
+    height:auto;
+    max-height: 90%;
+    overflow: auto;
+}
+.container {
+    max-width: 100%;
+    overflow: auto;
+}
+.bg-danger {
+    color: white;
+}
+
+.maxx {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* NEWS!! */
+.news {
+    line-height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    font-size: 14pt;
+    text-align: justify;
+    text-justify: newspaper;
+    background-image: url('background.jpg');
+}
+.notes {
+    color:blueviolet;
+    background-color:moccasin;
+    border-radius: 5px;
+    padding: 30px;
+}
+.news-box {
+    color: rgb(218, 73, 73);
+    width: 90%;
+    margin: .2% 5%;
+    background-color: rgba(5, 207, 229, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 0;
+    display: inline-block;
+}
+.margin {
+    width: 90%;
+    margin: .2% 5%;
+    padding: 15px;
+    z-index: 0;
+    display: inline-block;
+}
+.box-clear {
+    color: #2c062a;
+    width: 90%;
+    margin: .2% 5%;
+    background-color: rgba(226, 251, 255, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 0;
+    display: inline-block;
+}
+.fixed {
+    display: inline-block;
+}
+.fullWidth {
+    width: 100%;
+}
+.news .art {
+    color: #05cde5;
+    width: 65%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    /*font-size: 20pt;*/
+    font-weight: bold;
+    text-shadow:
+        3px 3px 0 rgb(80, 80, 80),
+        -1px -1px 0 rgb(40, 40, 40),  
+        1px -1px 0 rgb(40, 40, 40),
+        -1px 1px 0 rgb(40, 40, 40),
+        1px 1px 0 rgb(40, 40, 40);
+}
+.news ul {
+    padding: 20px;
+    list-style-type: circle;
+}
+.news ul li {
+    background: rgba(237, 193, 255, 0.555);
+    margin: 5px;
+}
+
+/* mobile tweaks */
+
+.centered {
+    max-width: 50%;
+    text-align: center;
+    position: sticky;
+    left: 25%;
+}
+
+@media all and (max-width: 600px) {
+    .options {
+        max-width: 100%;
+        flex: 0;
+    }
+    .ui-autocomplete {
+        max-height: 300px;
+        max-width: 300px;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .centered {
+        max-width: unset;
+        text-align: center;
+        position: sticky;
+        left: auto;
+    }
+}
+.grecaptcha-badge {
+    display: none;
+}
+
+/* CHAT CSS */
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.messageLog {
+    max-height: 400px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.open-button {
+    background-color: rgb(199, 64, 220);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 150px;
+    align-content: center;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: rgb(66, 198, 156);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    align-content: center;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: rgb(196, 84, 84);
+    align-content: center;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }

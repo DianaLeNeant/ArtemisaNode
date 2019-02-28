@@ -1,0 +1,50 @@
+<label for="nombre" class="control-label">Nombre</label>
+<input name="nombre" id="nombre" type="text" class="required" data-from="Nombre" required/>
+<label for="curp" class="control-label">CURP</label>
+<input name="curp" id="curp" type="text" class="required curp" data-from="CURP" required/>
+<label for="rfc" class="control-label">RFC</label>
+<input name="rfc" id="rfc" type="text" class="required rfc" data-from="RFC" required/>
+<label for="nss" class="control-label">NSS</label>
+<input name="nss" id="nss" type="text" class="required nss" data-from="NSS" required/>
+<label for="nacimiento" class="control-label">Fecha de Nacimiento</label>
+<input name="nacimiento" id="nacimiento" type="date" class="required" data-from="Nacimiento" required/>
+<label for="ingreso" class="control-label">Fecha de Ingreso</label>
+<input name="ingreso" id="ingreso" type="date" class="required" data-from="FechaIngreso" required/>
+<label for="domicilio" class="control-label">Domicilio</label>
+<input name="domicilio" id="domicilio" type="text" data-from="Domicilio" />
+<label for="puesto" class="control-label">Puesto</label>
+<select name="puesto" id="puesto" class="required" data-from="Puesto" required>
+    {puestos:Nombre:ID}
+</select>
+<label for="sueldo" class="control-label">Sueldo</label>
+<input name="sueldo" id="sueldo" type="text" class="numeric" data-from="Sueldo" />
+<label for="tarjeta" class="control-label">Tarjeta</label>
+<input name="tarjeta" id="tarjeta" type="text" class="card" data-from="Tarjeta" />
+<label for="sucursal" class="control-label">Sucursal</label>
+<select name="sucursal" id="sucursal" class="required" data-from="Sucursal" required>
+    {sucursales:Nombre:ID}
+</select>
+<label for="sangre" class="control-label">Tipo de Sangre</label>
+<select name="sangre" id="sangre" data-from="Sangre">
+    <option>O +</option>
+    <option>O -</option>
+    <option>A +</option>
+    <option>A -</option>
+    <option>B +</option>
+    <option>B -</option>
+    <option>AB +</option>
+    <option>AB -</option>
+</select>
+<label for="alergias" class="control-label">Alergias</label>
+<textarea name="alergias" id="alergias" data-from="Alergias"></textarea>
+<label for="activo" class="control-label">¿Está activo?</label>
+<input type="checkbox" id="activo" name="activo" data-from="Activo" />
+<label for="telefono" class="control-label">Teléfono Corporativo</label>
+<input name="telefono" id="telefono" type="text" class="telephone" data-from="TelCorp" />
+<label for="correo" class="control-label">Correo Corporativo</label>
+<input name="correo" id="correo" type="text" data-from="MailCorp" />
+<label for="niden" class="control-label">Número de Identificación Corporativo</label>
+<input name="niden" id="niden" type="text" data-from="IdenCorp" />
+
+<label for="docs" class="control-label">Documentos</label>
+<div data-type="files" class="dynform" id="docs{namegen}"></div>

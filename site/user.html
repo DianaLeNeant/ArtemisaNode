@@ -1,0 +1,84 @@
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LdEMYUUAAAAAOZ8Cd1JIp2c5fdLkYF6QWO3jLz1', {action: 'login'}).then(function(token) {
+            commandRequest('reToken', {token: token}, function(resp) {
+                console.log(resp);
+                if (!resp.success) {
+                    commandRequest('logout');
+                    window.location.href = 'artemisa.site:3000';
+                }
+            });
+        });
+    });
+</script>
+<h5 class="arlogo"><img src="artemisa.png" /> Artemisa - Usuario</h5>
+<div class='menu'>
+
+</div>
+
+<section class="box">
+    <section class="box-clear">
+        <legend class="art">Filtro de resultados</legend>
+        <div class="row">
+            <div class="col-8">
+                <input type="text" id="filtered" name='search' placeholder="Buscar..." class="seeker" data-limit="50" />
+            </div>
+            <div class="col-4">
+                <input type='button' class="btn btn-success" value="Filtrar" id="btn-filtered" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type='button' class="action" data-action="docExport.pdf" value="Exportar a PDF" />
+            </div>
+            <div class="col-6">
+                <input type='button' class="action" data-action="docExport.csv" value="Exportar a CSV (Excel)" />
+            </div>
+        </div>
+    </section>
+
+    <div id="content">
+        <ul>
+            <li><a href="#results">Resultados</a></li>
+        </ul>
+        <div id="results">
+            <legend class="art"><label>Resultados de la Consulta</label></legend><br />
+            <div class='container'>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function openForm() {
+        commandRequest('unreadC', {}, function (um) {
+            if (!um) return;
+            if (!um.chat) return;
+            $('.unread').html( tableHtmlize(um.chat) );
+        });
+        document.getElementById("chatbox").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("chatbox").style.display = "none";
+    }
+</script>
+<button class="open-button" onclick="openForm()">Chat</button>
+<div class="chat-popup" id="chatbox">
+    <form action="sendPM" class="form-container">
+        <label><b>Chat</b></label><br/>
+        <label>Mensajes no leídos:</label>
+        <p class="unread">
+            <b>Ninguno.</b>
+        </p>
+
+        <label for="msg"><b>Usuario</b></label>
+        <input name="with" id="with" type="text" class="form-control seeker" data-seek='usuarios:Nombre:ID' />
+
+        <label for="msg"><b>Mensaje</b></label>
+        <textarea placeholder="Mensaje" name="msg"></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
+    </form>
+</div>

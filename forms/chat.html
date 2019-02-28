@@ -1,0 +1,37 @@
+<div class="messageLog">
+
+</div>
+<div>
+    <form action="sendPM" class="form-chat">
+        <input name="with" id="with" type="hidden" value="{chatWith}" required/>
+
+        <label for="msg"><b>Mensaje</b></label>
+        <textarea placeholder="Mensaje" name="msg" required></textarea>
+
+        <button type="button" class="btnPM">Enviar</button>
+    </form>
+</div>
+
+<script class="postProcess">
+    closeForm();
+
+    if (this != window) {
+        this.find('.btnPM').unbind('click');
+        this.find('.btnPM').click(function(event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            var response = sendForm( $(this).closest('form') );
+
+            console.log($(this).closest('form').find('[name=with]').val());
+            console.log($(this).closest('form').closest('div').prevAll());
+
+            getChatWith($(this).closest('form').find('[name=with]').val(), $(this).closest('form').closest('div').prevAll());
+            $(this).closest('form').find('[name=msg]').val('');
+
+            return false;
+        });
+
+        getChatWith(this.find('#with').val(), $('.messageLog'));
+    }
+</script>

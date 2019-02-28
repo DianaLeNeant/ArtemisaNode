@@ -1,0 +1,12 @@
+{
+    "default": 120,
+    "sadmon": 24,
+    "comm": 72,
+    "logistics": 72,
+    "store": 72,
+    "biomed": 72,
+    "fact": 24,
+    "sadmonu": 24,
+    "sadmonm": 24,
+    "sadmong": 72
+}

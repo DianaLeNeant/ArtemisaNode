@@ -1,0 +1,41 @@
+<p>
+    <canvas class="barcode sendThis" width="62mm" height="29mm" name="barcode"></canvas>
+</p>
+
+<label for="pro" class="control-label">Producto</label>
+<input name="pro" id="pro" type="text" class="form-control seeker" data-seek='cmm_productos:Clave:ID' />
+<label>Cantidad</label>
+<input type="text" name="qnt" class="numeric" value="1" disabled></input>
+
+<label for="lin" class="control-label">Localización interna</label>
+<input name="lin" id="lin" type="text" class="form-control seeker" data-seek='cmm_lInternas:Nombre:ID' />
+<label for="lsc" class="control-label">Sucursal</label>
+<input name="lsc" id="lsc" type="text" class="form-control seeker" data-seek='sucursales:Nombre:ID' />
+
+<label for="sku" class="control-label">SKU</label>
+<input name="sku_mask" id="sku_mask" type="text" class="form-control" disabled/>
+<input type="hidden" name="sku" />
+<label for="serial" class="control-label">Serie</label>
+<input name="serial" id="serial" type="text" class="form-control" />
+<label for="notes" class="control-label">Notas</label>
+<textarea name="notes" class="form-control"></textarea>
+
+<script class="postProcess">
+    if (this != window) {
+        this.skuGen = nameGen();
+        var context = this;
+        this.find('[name=sku]').val(`AR-${String(this.skuGen)}`);
+        this.find('[name=sku_mask]').val(this.skuGen);
+        
+        JsBarcode(".barcode", `AR-${String(this.skuGen)}`, {
+            text: 'Artemisa SKU'
+        });
+        this.find('[name=pro]').on('change', function() {
+            if (isNaN($(this).val())) return;
+            JsBarcode(".barcode", `AR-${$(this).val()}!${String(context.skuGen)}`, {
+                text: 'Artemisa SKU'
+            });
+            context.find('[name=sku]').val(`AR-${$(this).val()}!${String(context.skuGen)}`);
+        });
+    }
+</script>

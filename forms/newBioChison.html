@@ -1,0 +1,11 @@
+<label for="serial" class="control-label">Licencia Chison</label>
+<input type="text" id="serial" name="serial" placeholder="Licencia Chison" data-from="Serie" />
+<label for="sdate" class="control-label">Fecha de Alta</label>
+<input type="date" name="sdate" id="sdate" class="form-control required" data-from="Fecha" />
+<label for="days" class="control-label">Días de Vigencia</label>
+<input type="number" name="days" id="days" class="form-control numeric required" data-from="Dias" />
+<textarea name="notes" class="form-control" placeholder="Notas" data-from="Notas"></textarea>
+<label for="rev" class="control-label">Revisión Enlazada</label>
+<input type="text" data-seek='cmm_biomedica:ProductoSerie:ID' class="form-control seeker" id="rev" name="rev" data-from="Revision" />
+<label for="snum" class="control-label">Número de Serie de Producto</label>
+<input type="text" class="form-control" id="snum" name="snum" data-from="ProductoSerie" />

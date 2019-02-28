@@ -1,0 +1,27 @@
+<label for="encargado" class="control-label">Encargado</label>
+<input type="text" name="encargado" id="encargado" class="form-control" data-from="Encargado" />
+<label for="sdate" class="control-label">Fecha de Entrada</label>
+<input type="date" name="sdate" id="sdate" class="form-control required" data-from="Entrada" />
+<label for="edate" class="control-label">Fecha de Salida</label>
+<input type="date" name="edate" id="edate" class="form-control" data-from="Salida" />
+<textarea name="notes" class="form-control" placeholder="Notas" data-from="Notas"></textarea>
+<label for="state" class="control-label">Estado</label>
+<select name="estado" data-from="Estado">
+    <option>Prestamo</option>
+    <option>Venta</option>
+    <option>Demo</option>
+    <option>Cambio</option>
+    <option>Disponible</option>
+    <option>Mantenimiento</option>
+</select>
+<label for="pro" class="control-label">Productos</label>
+<table data-from="ProductoSerie" class="editable" name="pserie" id="pserie">
+    <tr>
+        <th>
+            Producto
+        </th>
+        <th>
+            Serie
+        </th>
+    </tr>
+</table>

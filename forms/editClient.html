@@ -1,0 +1,110 @@
+<legend class="art"><label>Edición de Cliente</label></legend>
+<h3>Datos de Facturación</h3>
+<input type="button" class="noFact" value="Sí requiere factura"/>
+<table id="factData">
+    <tr>
+        <td><label>Categoría</label></td>
+        <td><select name="modCategoria" data-from="Categoria">
+        {cmm_ccategorias:Nombre:ID}
+        </select></td>
+    </tr>
+    <tr>
+        <td><label>Especialidad</label></td>
+        <td><select name="modEspecialidad" data-from="Subcategoria">
+        {cmm_cespecialidades:Nombre:ID}
+        </select></td>
+    </tr>
+    <tr>
+        <td><label>Razón Social</label></td>
+        <td><input type="text" name="modRazon" data-from="RazonSocial"></input></td>
+    </tr>
+    <tr>
+        <td><label>RFC</label></td>
+        <td><input type="text" name="modRFC" data-from="RFC" class="rfc"></input></td>
+    </tr>
+    <tr>
+        <td><label>Domicilio</label></td>
+        <td><input type="text" name="modDomicilio" data-from="Domicilio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Ciudad / Colonia</label></td>
+        <td><input type="text" name="modCiudad" data-from="Ciudad"></input></td>
+    </tr>
+    <tr>
+        <td><label>Municipio</label></td>
+        <td><input type="text" name="modMunicipio" data-from="Municipio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Estado</label></td>
+        <td><input type="text" name="modEstado" data-from="Estado"></input></td>
+    </tr>
+    <tr>
+        <td><label>Código Postal</label></td>
+        <td><input name="modCP" type="text" class="zip" data-zipcity='modCiudad' data-zipstate='modEstado' data-from="CP"></input></td>
+    </tr>
+    <tr>
+        <td><label>Correo</label></td>
+        <td><input type="text" name="modCorreo" data-from="Correo"></input></td>
+    </tr>
+    <tr>
+        <td><label>Teléfono</label></td>
+        <td><input type="text" name="modTel" data-from="Telefono" class="telephone"></input></td>
+    </tr>
+</table>
+<h3>Datos de Envío / Personales</h3>
+<table>
+    <tr>
+        <td><label>Nombre</label></td>
+        <td><input type="text" name="modNombre" class="required" data-from="Nombre" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Domicilio Personal</label></td>
+        <td><input type="text" name="modCDomicilio" data-from="CDomicilio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Ciudad /Colonia Personal</label></td>
+        <td><input type="text" name="modCCiudad" data-from="CCiudad"></input></td>
+    </tr>
+    <tr>
+        <td><label>Municipio Personal</label></td>
+        <td><input type="text" name="modCMunicipio" data-from="CMunicipio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Estado Personal</label></td>
+        <td><input type="text" name="modCEstado" data-from="CEstado"></input></td>
+    </tr>
+    <tr>
+        <td><label>Código Postal Personal</label></td>
+        <td><input name="modCCP" type="text" class="zip" data-zipcity='modCCiudad' data-zipstate='modCEstado' data-from="CCP"></input></td>
+    </tr>
+    <tr>
+        <td><label>Correo Personal</label></td>
+        <td><input type="text" name="modCCorreo" class="required" data-from="CCorreo" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Teléfono Personal</label></td>
+        <td><input type="text" name="modCTel" data-from="CTelefono" class="telephone"></input></td>
+    </tr>
+
+    <tr>
+        <td><label>Notas</label></td>
+        <td><textarea name="modNotas" data-from="Notas"></textarea></td>
+    </tr>
+</table>
+<h3>Seguimiento</h3>
+<table>
+    <tr>
+        <td>
+            <table class="editable" name="seguimiento" id="seguimiento" data-from="Seguimiento" noprev>
+                <tr>
+                    <th data-type="list:|En comunicación,|Cotizando,|Probable venta,|Venta,|Inactivo,|Nota">
+                        Estado
+                    </th>
+                    <th>
+                        Notas
+                    </th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

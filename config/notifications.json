@@ -1,0 +1,35 @@
+{
+    "default": {
+        "default": ["sadmon", "sadmong"],
+        "salesu": ["sadmonu", "sadmong"],
+        "salesb": ["sadmonb", "sadmong"],
+        "meison": ["sadmonm", "sadmong"]
+    },
+    "postSale": {
+        "default": ["sadmon", "sadmong"],
+        "salesu": ["sadmonu", "sadmong"],
+        "salesb": ["sadmonb", "sadmong"],
+        "meison": ["sadmonm", "sadmong"]
+    },
+    "createNotif": {
+        "default": ["sadmon", "sadmong"],
+        "salesu": ["sadmonu", "sadmong"],
+        "salesb": ["sadmonb", "sadmong"],
+        "meison": ["sadmonm", "sadmong"]
+    },
+    "postBioRev": {
+        "default": ["biomed"]
+    },
+    "newStoreOut": {
+        "default": ["logistics"]
+    },
+    "postSale.Status": {
+        "16": ["comm"],
+        "3": ["logistics"],
+        "4": ["biomed"],
+        "15": ["fact"],
+        "9": ["fact"],
+        "18": ["store"],
+        "19": ["comm"]
+    }
+}

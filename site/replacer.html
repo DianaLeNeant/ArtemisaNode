@@ -1,0 +1,41 @@
+<div class="box">
+    <input type="text" id="table" placeholder="Origin table..." />
+    <input type="text" id="cat" placeholder="Origin category... (Nombre)" />
+    <input type="text" id="idc" placeholder="Origin ID... (ID)" />
+    <textarea id="data" placeholder="Data to replace..."></textarea>
+    <textarea id="nf" placeholder="Not-found values"></textarea>
+    <button id="rep">Replace</button>
+</div>
+<script class="postProcess">
+    bindForm();
+
+    if (this != window) {
+        this.find('#rep').click(function() {
+            var req = {T: $('#table').val(), C: $('#cat').val(), I: $('#idc').val()}
+            commandRequest('getCatL', req, function(res) {
+                var spl = $('#data').val().split('\n');
+                var nls = [];
+                var nfound = [];
+                var k = Object.keys(res.result);
+                for (let i = 0; i < spl.length; i++) {
+                    var dta = spl[i];
+                    var found = false;
+                    for (let z = 0; z < k.length; z++) {
+                        var ky = k[z];
+                        if (res.result[ky].trim().toLowerCase() == dta.trim().toLowerCase()) {
+                            nls[i] = ky;
+                            found = true;
+                        }
+                    }
+                    if (!found) {
+                        nls[i] = `${dta} not found`;
+                        if (nfound.indexOf(dta) < 0) nfound.push(dta);
+                    }
+                }
+                console.log(nfound);
+                $('#data').val(nls.join('\n'));
+                $('#nf').val(nfound.join('\n'));
+            });
+        })
+    }
+</script>

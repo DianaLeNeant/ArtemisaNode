@@ -1,0 +1,94 @@
+<legend class="art"><label>Alta de Cliente</label></legend>
+<h3>Datos de Facturación</h3>
+<input type="button" class="noFact" value="Sí requiere factura"/>
+<table id="factData">
+    <tr>
+        <td><label>Categoría</label></td>
+        <td><select name="modCategoria">
+        {cmm_ccategorias:Nombre:ID}
+        </select></td>
+    </tr>
+    <tr>
+        <td><label>Especialidad</label></td>
+        <td><select name="modEspecialidad">
+        {cmm_cespecialidades:Nombre:ID}
+        </select></td>
+    </tr>
+    <tr>
+        <td><label>Razón Social</label></td>
+        <td><input type="text" name="modRazon"></input></td>
+    </tr>
+    <tr>
+        <td><label>RFC</label></td>
+        <td><input type="text" name="modRFC" class="rfc"></input></td>
+    </tr>
+    <tr>
+        <td><label>Domicilio</label></td>
+        <td><input type="text" name="modDomicilio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Ciudad / Colonia</label></td>
+        <td><input type="text" name="modCiudad"></input></td>
+    </tr>
+    <tr>
+        <td><label>Municipio</label></td>
+        <td><input type="text" name="modMunicipio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Estado</label></td>
+        <td><input type="text" name="modEstado"></input></td>
+    </tr>
+    <tr>
+        <td><label>Código Postal</label></td>
+        <td><input name="modCP" type="text" class="zip" data-zipcity='modCiudad' data-zipstate='modEstado'></input></td>
+    </tr>
+    <tr>
+        <td><label>Correo</label></td>
+        <td><input type="text" name="modCorreo"></input></td>
+    </tr>
+    <tr>
+        <td><label>Teléfono</label></td>
+        <td><input type="text" name="modTel" class="telephone"></input></td>
+    </tr>
+</table>
+
+<h3>Datos de Envío / Personales</h3>
+<table>
+    <tr>
+        <td><label>Nombre</label></td>
+        <td><input type="text" name="modNombre" class="required" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Domicilio Personal</label></td>
+        <td><input type="text" name="modCDomicilio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Ciudad / Colonia Personal</label></td>
+        <td><input type="text" name="modCCiudad"></input></td>
+    </tr>
+    <tr>
+        <td><label>Municipio Personal</label></td>
+        <td><input type="text" name="modCMunicipio"></input></td>
+    </tr>
+    <tr>
+        <td><label>Estado Personal</label></td>
+        <td><input type="text" name="modCEstado"></input></td>
+    </tr>
+    <tr>
+        <td><label>Código Postal Personal</label></td>
+        <td><input name="modCCP" type="text" class="zip" data-zipcity='modCCiudad' data-zipstate='modCEstado' /></td>
+    </tr>
+    <tr>
+        <td><label>Correo Personal</label></td>
+        <td><input type="text" name="modCCorreo" class="required" required></input></td>
+    </tr>
+    <tr>
+        <td><label>Teléfono Personal</label></td>
+        <td><input type="text" name="modCTel" class="telephone"></input></td>
+    </tr>
+
+    <tr>
+        <td><label>Notas</label></td>
+        <td><textarea name="modNotas"></textarea></td>
+    </tr>
+</table>

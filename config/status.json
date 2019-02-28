@@ -1,0 +1,107 @@
+{
+    "default": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": true,
+        "alertStatus": false,
+        "transitStatus": false
+    },
+    "1": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": true,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "2": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": false,
+        "transitStatus": true
+    },
+    "3": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": false,
+        "transitStatus": true
+    },
+    "4": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": false,
+        "transitStatus": true
+    },
+    "5": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": true,
+        "alertStatus": false,
+        "transitStatus": false
+    },
+    "6": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "8": {
+        "canceledStatus": false,
+        "invalidStatus": true,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "10": {
+        "canceledStatus": false,
+        "invalidStatus": true,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "12": {
+        "canceledStatus": false,
+        "invalidStatus": true,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "15": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "16": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "17": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": false
+    },
+    "23": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": true
+    },
+    "24": {
+        "canceledStatus": false,
+        "invalidStatus": false,
+        "idleStatus": false,
+        "alertStatus": true,
+        "transitStatus": true
+    }
+}

@@ -1,0 +1,61 @@
+<h5 class="arlogo"><img src="artemisa.png" /> Artemisa - Solicitud de Registro</h5>
+<section class="box">
+    <legend class="art">Registro</legend>
+    <form action="register" id="register">
+        <div class="row">
+            <div class="col-8">
+                <legend class="default">
+                    Solicita aquí el registro de tu usuario si aún no tienes acceso a <i>Artemisa</i>
+                    o necesitas múltiples usuarios para realizar tus ventas. En caso de necesitar múltiples
+                    usuarios, favor de enviar una solicitud por usuario.
+                </legend>
+                <label>Área de trabajo:</label>
+                <select name='area'class='area' placeholder="Área" class="required">
+                </select>
+                <label>Nombre de usuario: (este será con el que iniciarás sesión)</label>
+                <input type="text" name='usrname' placeholder="Nombre de Usuario" class="required" />
+                <label>Contraseña: (esta será con la que iniciarás sesión)</label>
+                <input type="text" name='psswd' placeholder="Contraseña" class="required" /><br />
+                <label>Tu nombre completo:</label>
+                <input type="text" name="fullname" placeholder="Nombre completo" class="required" />
+                <label>E-mail corporativo:</label>
+                <input type="text" name="email" placeholder="E-mail corporativo" class="required" />
+                <label>Número telefónico corporativo:</label>
+                <input type="text" name="tel" placeholder="Contacto corporativo" class="required" /><br />
+                <label>Empresa de VASA donde vendes: (sólo en caso de ser ejecutivo de ventas)</label>
+                <select name='ent' placeholder="Empresa donde vendes" class="required">
+                    <option value="1">MEDICAL BUY</option>
+                    <option value="2">MEISON MEDICAL</option>
+                    <option value="3">PROMED</option>
+                    <option value="4">SONOSCAPE</option>
+                    <option value="5">ULTRASONIDOS MEXICO</option>
+                    <option value="7">VENTA DE EQUIPO MEDICO</option>
+                    <option value="8">CHISON</option>
+                    <option value="9">EQUIPAMIENTO HOSPITALARIO</option>
+                </select><br />
+                <label>¿Requieres permisos especiales? ¿Múltiples empresas?</label>
+                <textarea name="notes" placeholder="Notas sobre el usuario"></textarea>
+                <footer>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Enviar" />
+                            </td>
+                            <td>
+                                <input type="reset" value="Reiniciar" />
+                            </td>
+                            <td>
+                                <a class="ar" href="../">Regresar</a>
+                            </td>
+                        </tr>
+                    </table>
+                </footer>
+            </div>
+            <div class="col-4 my-auto align-self-center">
+                <h1>
+                    Registro
+                </h1>
+            </div>
+        </div>
+    </form>
+</section>

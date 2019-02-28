@@ -1,0 +1,50 @@
+<label for="nombre" class="control-label">Nombre</label>
+<input name="nombre" id="nombre" type="text" class="required" />
+<label for="curp" class="control-label">CURP</label>
+<input name="curp" id="curp" type="text" class="required curp" />
+<label for="rfc" class="control-label">RFC</label>
+<input name="rfc" id="rfc" type="text" class="required rfc" />
+<label for="nss" class="control-label">NSS</label>
+<input name="nss" id="nss" type="text" class="required nss" />
+<label for="nacimiento" class="control-label">Fecha de Nacimiento</label>
+<input name="nacimiento" id="nacimiento" type="date" class="required" />
+<label for="ingreso" class="control-label">Fecha de Ingreso</label>
+<input name="ingreso" id="ingreso" type="date" class="required" />
+<label for="domicilio" class="control-label">Domicilio</label>
+<input name="domicilio" id="domicilio" type="text" />
+<label for="puesto" class="control-label">Puesto</label>
+<select name="puesto" id="puesto" class="required">
+    {puestos:Nombre:ID}
+</select>
+<label for="sueldo" class="control-label">Sueldo</label>
+<input name="sueldo" id="sueldo" type="text" class="numeric" />
+<label for="tarjeta" class="control-label">Tarjeta</label>
+<input name="tarjeta" id="tarjeta" type="text" class="card" />
+<label for="sucursal" class="control-label">Sucursal</label>
+<select name="sucursal" id="sucursal" class="required">
+    {sucursales:Nombre:ID}
+</select>
+<label for="sangre" class="control-label">Tipo de Sangre</label>
+<select name="sangre" id="sangre">
+    <option>O +</option>
+    <option>O -</option>
+    <option>A +</option>
+    <option>A -</option>
+    <option>B +</option>
+    <option>B -</option>
+    <option>AB +</option>
+    <option>AB -</option>
+</select>
+<label for="alergias" class="control-label">Alergias</label>
+<textarea name="alergias" id="alergias"></textarea>
+<label for="activo" class="control-label">¿Está activo?</label>
+<input type="checkbox" id="activo" name="activo" />
+<label for="telefono" class="control-label">Teléfono</label>
+<input name="telefono" id="telefono" type="text" class="telephone" />
+<label for="correo" class="control-label">Correo Corporativo</label>
+<input name="correo" id="correo" type="text" />
+<label for="niden" class="control-label">Número de Identificación Corporativo</label>
+<input name="niden" id="niden" type="text" />
+
+<label for="docs" class="control-label">Documentos</label>
+<div data-type="files" class="dynform" id="docs{namegen}"></div>

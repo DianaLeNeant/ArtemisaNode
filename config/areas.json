@@ -1,0 +1,179 @@
+{
+    "default": {
+        "class": "ligth",
+        "admon": false,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sales": {
+        "class": "secondary",
+        "admon": false,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "salesu": {
+        "class": "secondary",
+        "admon": false,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "salesb": {
+        "class": "secondary",
+        "admon": false,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "meison": {
+        "class": "secondary",
+        "admon": false,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sadmon": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sadmonu": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sadmonm": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sadmong": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "sadmonb": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "prosp": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "roster": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "rrhh": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "comm": {
+        "class": "primary",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "logistics": {
+        "class": "primary",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "store": {
+        "class": "primary",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "fact": {
+        "class": "primary",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "biomed": {
+        "class": "info",
+        "admon": true,
+        "flag": false,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+
+    "total": {
+        "class": "success",
+        "admon": true,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+
+    "ger": {
+        "class": "primary",
+        "admon": true,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "restricted": {
+        "class": "dark",
+        "admon": false,
+        "flag": true,
+        "restrictedUser": true,
+        "absentStatus": false
+    },
+    "mute": {
+        "class": "dark",
+        "admon": false,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "absent": {
+        "class": "danger",
+        "admon": false,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": true
+    },
+    "foreign": {
+        "class": "warning",
+        "admon": false,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": false
+    },
+    "apanel": {
+        "class": "warning",
+        "admon": true,
+        "flag": true,
+        "restrictedUser": false,
+        "absentStatus": false
+    }
+}

@@ -1,0 +1,195 @@
+<html>
+<head>
+<style>
+       body {
+                color: black;
+                line-height: 100%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+                         }
+						 .box {
+    width: 90%;
+    margin: .2% 5%;
+       border-radius: 15px;
+    padding: 10px;
+    z-index: 0;
+    display: inline-block;
+}
+    .logo {
+    float: left;
+    width: 15%;
+    height: 20%;
+}
+.desc-art {
+    float: left;
+	width: 30%;
+    margin: 1% 0 6% 10%;
+}
+.cot-art {
+    float: left;
+	width: 15%;
+    margin: 1% 0 6% 2%;
+	    border-left: 1px solid #d4d4d4;
+}
+img.img-log {
+    width: 100%;
+}
+span.text-art {
+    color: #19b7d7;
+    line-height: 2.5em;
+}
+span.sp-art {
+    color: #666;
+    width: 100%;
+    line-height: 1.5em;
+    width: 100%;
+    float: left;
+}
+span.sp-arte {
+    background: white;
+    float: right;
+    width: 100%;
+    color: #19b7d7;
+    line-height: 2.5em;
+    text-align: center;
+	    font-weight: 900;
+}
+span.va-art {
+    background: #f9f9f9;
+    float: right;
+    width: 100%;
+    color: #000000;
+    line-height: 2.5em;
+    text-align: center;
+}
+.cli-art {
+    width: 90%;
+    float: left;
+    border-top: 2px solid #c3c3c3;
+    border-bottom: 2px solid #c3c3c3;
+}
+.client-art {
+    float: left;
+    width: 40%;
+    padding: 3%;
+}
+.ejec-art {
+    float: left;
+    width: 40%;
+    padding: 3%;
+}
+.text-client {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    color: #797979;
+    font-weight: 700;
+    font-size: 23px;
+    float: left;
+    margin: 0 8% 0 0;
+}
+.descrip-client {
+    float: left;
+    width: 79%;
+    font-size: 14pt;
+}
+  table {
+                align-self: center;
+                table-layout: auto;
+            }
+            table * {
+                border: 3px;
+                font-size: 6pt;
+            }
+            table tr td {
+                padding: 5px;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+                table tr.result, tr.message {
+                    background-color: floralwhite;
+                    color: darkblue;
+                    font-size: 5pt;
+                }
+                table tr.header, td.user {
+                    font-weight: bold;
+                    font-size: 8pt;
+                  color: white;
+    background-color: #05cde5;
+                    text-align: center;
+                }
+		.prod-art {
+    width: 90%;
+    margin-top: 3%;
+    border-radius: 15px;
+    padding: 10px;
+    z-index: 1;
+    display: inline-block;
+}
+legend.art {
+    width: 97.4%;
+    padding: 1%;
+    background: #02b0d3;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15pt;
+}
+.obser-art {
+width: 50%;
+    margin-top: 3%;
+    border-radius: 15px;
+    padding: 10px;
+    z-index: 1;
+    display: inline-block;
+	}
+	div#pageFooter {
+    text-align: justify;
+    color: #8e8e8e;
+    line-height: 1.5em;
+	    width: 90%;
+}
+</style>
+</head>
+<body>
+<div id="pageHeader" class="box">
+<div class="logo"><img src='logo.png' class="img-log" /></div>
+<div class="desc-art">
+<span class="text-art"><strong>COMERCIALIZADORA Y DISTRIBUIDORA MB SA DE CV</strong></span>
+<span class="sp-art">Pafnuncio Padilla #53, Naucalpan de Juarez, Edo. México</span>
+<span class="sp-art">Tel: 01 55 58 61 89 00 o 01 800 890 51 74</span>
+<span class="sp-art">CP. 53100</span>
+</div>
+<div class="cot-art">
+<span class="sp-arte">COTIZACIÓN</span>
+<span class="va-art">{dserial}<span>
+<span class="sp-arte">FECHA</span>
+<span class="va-art">{sdate}<span>
+</div>
+<div class="cli-art">
+<div class="client-art">
+<div class="text-client">CLIENTE</div>
+<div class="descrip-client">{client}</div>
+</div>
+<div class="ejec-art">
+<div class="text-client">EJECUTIVO</div>
+<div class="descrip-client">{uname}</div>
+</div>
+</div>
+<div class="prod-art">
+    <legend class="art">PRODUCTOS</legend>
+    <p>
+        {items.table}
+    </p>
+</div>
+<div class="obser-art">
+    <legend class="art">OBSERVACIONES</legend>
+    <p>
+        {notes}
+    </p>
+</div>
+<div id="pageFooter" class="formal">
+    *Precio sujeto a cambio sin previo aviso *Las existencias de los equipos son salvo  venta, una vez confirmado el pedido no se aceptan cambios , devoluciones o cancelaciones, *En caso de cancelación se cobrará el 30% del monto total de la compra y el reembolso se realiza 10 días hábiles posteriores a la cancelación. *Cualquier pago deberá ser notificado a su ejecutivo de ventas, es indispensable enviar el comprobante de pago para tramitar el pedido de los equipos solicitados.  *Cuando el equipo sea enviado por paqueteria, NO FIRMAR DE RECIBIDO sin antes haber revisado que el equipo este en perfectas condiciones. *PRECIOS EN USD O EURO A M.N. EN EL MOMENTO DE LA COMPRA AL TIPO DE CAMBIO DE BANAMEX VENTANILLA A LA VENTA. Los números de guia se daran despues del tercer dia.
+</div>
+</div>
+
+</body>
+</html>

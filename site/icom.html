@@ -1,0 +1,48 @@
+<h5 class="arlogo"><img src="artemisa.png" /> Artemisa - iCom</h5>
+<div class='menu'>
+    
+</div>
+
+<section class="box">
+    <div id="content">
+        
+    </div>
+</section>
+<script>
+    var lCon = `<section class="box">
+        <legend class="art">Iniciar Sesión en iCom</legend>
+        <form action="login" id="login">
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="hidden" name="area" value="icom" />
+                    <input type="text" name='usrname' placeholder="Nombre de Usuario">        
+                    <input type="password" name='psswd' placeholder="Contraseña">
+                    <footer>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Iniciar sesión" />
+                                </td>
+                                <td>
+                                    <input type="reset" value="Reiniciar" />
+                                </td>
+                                <td>
+                                    <a class="ar" href="../">Regresar</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </footer>
+                </div>
+                <div class="col-md-4 my-auto align-self-center">
+                    <h1>
+                        Inicie sesión
+                    </h1>
+                </div>
+            </div>
+        </form>
+    </section>`;
+    if (!HTTPGet()['s']) {
+        var content = getBodyContent();
+        content.html(lCon);
+    }
+</script>

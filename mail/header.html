@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <style>
+            body {
+                color: black;
+                line-height: 100%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+                font-size: 14pt;
+                text-align: justify;
+                text-justify: newspaper;
+                background-image: url('https://artemisa.site:3000/background.jpg');
+            }
+            .logo {
+                max-width: 200px;
+                max-height: 80px;
+            }
+            span {
+                text-align: right;
+                font-weight: bold;
+            }
+            .notes {
+                color:blueviolet;
+                background-color:moccasin;
+                border-radius: 15px;
+                padding: 30px;
+            }
+            .art {
+                color: #05cde5;
+                width: 65%;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 15px;
+                padding: 10px;
+                /*font-size: 20pt;*/
+                font-weight: bold;
+                text-shadow:
+                    3px 3px 0 rgb(80, 80, 80),
+                    -1px -1px 0 rgb(40, 40, 40),  
+                    1px -1px 0 rgb(40, 40, 40),
+                    -1px 1px 0 rgb(40, 40, 40),
+                    1px 1px 0 rgb(40, 40, 40);
+            }
+            .box {
+                color: rgb(218, 73, 73);
+                width: 90%;
+                margin: .2% 5%;
+                background-color: rgba(5, 207, 229, 0.3);
+                border-radius: 15px;
+                padding: 10px;
+                z-index: 0;
+                display: inline-block;
+            }
+            .margin {
+                width: 90%;
+                margin: .2% 5%;
+                padding: 15px;
+                z-index: 0;
+                display: inline-block;
+            }
+            .box-clear {
+                color: #2c062a;
+                width: 90%;
+                margin: .2% 5%;
+                background-color: rgba(226, 251, 255, 0.9);
+                border-radius: 15px;
+                padding: 10px;
+                z-index: 0;
+                display: inline-block;
+            }
+            .fixed {
+                display: inline-block;
+            }
+            .fullWidth {
+                width: 100%;
+            }
+
+            table {
+                align-self: center;
+                table-layout: fixed;
+            }
+            table * {
+                border: 3px;
+                font-size: 10pt;
+            }
+            td {
+                max-width: 400px;
+            }
+            table tr, td {
+                padding: 5px;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+                table tr.result, tr.message {
+                    background-color: floralwhite;
+                    color: darkblue;
+                    font-size: 12pt;
+                }
+                table tr.header, td.user {
+                    font-weight: bold;
+                    font-size: 10pt;
+                    color: antiquewhite;
+                    background-color: darkblue;
+                    text-align: center;
+                }
+            .formal {
+                color: darkslateblue;
+                font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
+                font-size: 12pt;
+                font-style: italic;
+                text-align: center;
+                margin: .2% 5%;
+            }
+            .arlogo {
+                font-family: 'Times New Roman', 'Times', 'serif';
+                font-weight: bold;
+                font-style: italic;
+                font-size: 200%;
+                text-align: right;
+                align-self: center;
+
+                color: aliceblue;
+                width: 90%;
+                margin: .2% 5%;
+                background-color: rgba(132, 12, 153, 0.3);
+                border-radius: 15px;
+                padding: 10px;
+                z-index: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pageHeader">
+            <h5 class="arlogo"><img src="https://artemisa.site:3000/artemisa.png" /> Artemisa</h5>
+        </div>
+        <div class="content box">
+            <div class="margin">

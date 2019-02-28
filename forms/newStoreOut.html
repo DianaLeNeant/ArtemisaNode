@@ -1,0 +1,20 @@
+<label for="edate" class="control-label">Fecha de Salida</label>
+<input type="date" name="edate" id="edate" class="required form-control"  />
+<label for="sale" class="control-label">ID de Venta</label>
+<input type="text" name="sale" id="sale" class="required form-control"  />
+<label for="status" class="control-label">Estado</label>
+<select name="status">
+    <option>Salida hacia corporativo</option>
+    <option>Salida hacia cliente final</option>
+</select>
+<textarea name="notes" class="form-control" placeholder="Notas"></textarea>
+
+<label for="pro" class="control-label">Productos</label>
+<table class="editable" name="pserie" id="pserie">
+    <tr>
+        <th data-type="seeker:cmm_almacen.SKU.SKU">
+            SKU Producto
+        </th>
+    </tr>
+</table>
+

@@ -1,0 +1,10 @@
+{
+    "port": 3000,
+    "dayStart": 9,
+    "registrationAreaWhitelist": [
+        "sales",
+        "meison",
+        "salesb",
+        "salesu"
+    ]
+}

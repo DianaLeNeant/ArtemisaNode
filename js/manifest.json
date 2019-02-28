@@ -1,0 +1,13 @@
+{
+    "short_name": "Artemisa",
+    "name": "Artemisa / Corporativo VASA",
+    "icons": [{
+      "src": "artemisa.png",
+      "sizes": "64x64"
+    }],
+    "start_url": "/",
+    "background_color": "#840c994d",
+    "display": "standalone",
+    "orientation": "landscape",
+    "theme_color": "#840c994d"
+  }
