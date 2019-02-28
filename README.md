@@ -14,7 +14,7 @@ Also, Artemisa is build in several parts:
   - Mobile apps ... (other repositories)
 
 There are changes to be made soon:
-  - Add color schemes to that JSON files of configuration.
+  - Add color schemes to that JSON configuration files.
   
 The above changes will assure systems runtime modifications, at least the most regular ones.
 
