@@ -1,3 +1,16 @@
+/**
+ * Array / Object to HTML content.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
+
+/**
+ * Conversion of navigation object to HTML content.
+ * 
+ * @param {Object} obj Server object to be parsed.
+ * @param {String} classes CSS class to add.
+ */
 function htmlize(obj = {}, classes = '') {
     /*
         m_key = category name
@@ -105,6 +118,14 @@ function htmlize(obj = {}, classes = '') {
     return ret;
 }
 
+/**
+ * Parse object or array to HTML table.
+ * 
+ * @param {Object} obj Object or Array to be parsed.
+ * @param {String} classes CSS classes for the table.
+ * @param {String} res_class CSS classes for 'tr' elements.
+ * @param {Boolean} recursive Determines if tableHtmlize will be recursive or will invoke listHtmlize instead for each recursive iteration.
+ */
 function tableHtmlize(obj = {}, classes = '', res_class = '', recursive = true) {
     var ret = `<table id='${nameGen()}' class='${classes}'><thead class="header"><tr>`;
     var extra = '';
@@ -502,6 +523,13 @@ function tableHtmlize(obj = {}, classes = '', res_class = '', recursive = true) 
     return String(ret).replace(/undefined/g, '').replace(/NaN/g, '');
 }
 
+/**
+ * Converts an Array or Object to a DIV bootstrap grid.
+ * 
+ * @param {Object} obj Array or Object to be parsed.
+ * @param {String} classes Container DIV CSS class.
+ * @param {String} res_class Row DIV CSS class.
+ */
 function listHtmlize(obj = {}, classes = '', res_class = '') {
     var ret = `<div id='${nameGen()}' class='${classes}'><div class='row'>`;
     var extra = '';
