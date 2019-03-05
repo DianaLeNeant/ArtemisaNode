@@ -1,4 +1,11 @@
-// default client-side script \ Server Communication Parsing Events
+/**
+ * Default client-side script / server communication.
+ *
+ * Here lies the whole client core.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
 
 /*          CONTENT RECEPTION
                 action:
@@ -146,19 +153,18 @@ function loadForms() {
     for (let x = 0; x < localStorage.length; x++) {
         var tform = secureParse(localStorage[localStorage.key(x)]);
         if (tform[3] == session.info.Usr) {
-            //if (tform.length > 4) if (tform[4] != session.loggedAt)
             try {
-                if (content.find('a.aFormTitle').find(`[href=${localStorage.key(x)}]`).length == 0) {
+                if (content.find('a.aFormTitle').find(`[href="${localStorage.key(x)}"]`).length == 0) {
                     var fcon = createForm(tform[0], tform[2]);
                     console.log(fcon);
                     try {
                         fcon.find('.options').find('form').deserialize(tform[1]);
                     } catch (error) {
-
+                        console.error(error);
                     }
                 }
             } catch (error) {
-
+                console.error(error);
             }
         }
     }
@@ -503,8 +509,10 @@ function productProperties (item, perm = false) {
         var tiva = item.find('.iva').html();
         var tpr = Number(item.find('.price').html());
         var tqn = Number(item.find('.qnt').html());
+        var tnt = String(item.find('.ent').html());
         if (item.find('.qnt').length > 0) {
             modHTML += `Cantidad: <input type="text" name="newqn" placeholder="Nueva cantidad" value="${tqn}" class="numeric" />`;
+            modHTML += `Notas extra: <input type="text" name="newnt" placeholder="Notas" value="${(tnt ? tnt : "")}" />`;
         }
         if (item.find('.price').length > 0) {
             modHTML += `Precio: <input type="text" name="newpr" placeholder="Nuevo precio" value="${tpr}" />`;
@@ -513,10 +521,19 @@ function productProperties (item, perm = false) {
             modHTML += `¿Lleva IVA?<input type="checkbox" name="newiva" ${(tiva == 'on' || tiva == '1' ? 'checked' : '')} />`;
         }
 
+        var applyNnt = function(nnt) {
+            if (item.find('.ent').length > 0) {
+                item.find('.ent').html(String(nnt));
+            } else {
+                item.append(`<td class="ent">${String(nnt)}</td>`);
+            }
+        }
+
         createFormDialog(modHTML, function(res) {
             var npr = res.get('newpr');
             var niv = res.get('newiva');
             var nqn = res.get('newqn');
+            var nnt = res.get('newnt');
 
             if (npr.includes('%')) {
                 if (!item.hasClass('admon') && !perm) {
@@ -535,6 +552,8 @@ function productProperties (item, perm = false) {
                             item.find('.price').html(String(npr));
                             item.find('.iva').html(niv);
                             item.find('.qnt').html(String(nqn));
+
+                            applyNnt(nnt);
                         } else {
                             createDialog('Permiso denegado.')
                         }
@@ -547,6 +566,8 @@ function productProperties (item, perm = false) {
                     item.find('.price').html(String(npr));
                     item.find('.iva').html(niv);
                     item.find('.qnt').html(String(nqn));
+
+                    applyNnt(nnt);
                 }
             } else {
                 if (npr < tpr && !perm) {
@@ -555,6 +576,8 @@ function productProperties (item, perm = false) {
                             item.find('.price').html(String(npr));
                             item.find('.iva').html(niv);
                             item.find('.qnt').html(String(nqn));
+
+                            applyNnt(nnt);
                         } else {
                             createDialog('Permiso denegado.')
                         }
@@ -563,6 +586,8 @@ function productProperties (item, perm = false) {
                     item.find('.price').html(String(npr));
                     item.find('.iva').html(niv);
                     item.find('.qnt').html(String(nqn));
+
+                    applyNnt(nnt);
                 }
             }
         });
@@ -587,6 +612,7 @@ function askFromQuery(id, admon = false) {
                     $(toadd.find('td')[4]).addClass('price');
                     $(toadd.find('td')[5]).addClass('iva');
                     $(toadd.find('td')[6]).addClass('qnt');
+                    $(toadd.find('td')[7]).addClass('ent');
                     var itm = fCon.find('.items').find('.tblItems').append(toadd);
                 });
                 fCon.find('.options').find('[name=logo]').val(result.res.Logo);
@@ -628,6 +654,7 @@ function saleFromQuery(id, admon = false) {
                     $(toadd.find('td')[4]).addClass('price');
                     $(toadd.find('td')[5]).addClass('iva');
                     $(toadd.find('td')[6]).addClass('qnt');
+                    $(toadd.find('td')[7]).addClass('ent');
                     var itm = fCon.find('.items').find('.tblItems').append(toadd);
                 });
                 if (!session.loggedAt.includes('sales') && !session.loggedAt.includes('meison')) {
@@ -1423,6 +1450,7 @@ function bindForm(caller) {
                                 $(toadd.find('td')[4]).addClass('price');
                                 $(toadd.find('td')[5]).addClass('iva');
                                 $(toadd.find('td')[6]).addClass('qnt');
+                                $(toadd.find('td')[7]).addClass('ent');
                                 var itm = fCon.find('.items').find('.tblItems').append(toadd);
                             });
                             fCon.find('.options').find('[name=client]').val(result.res.Cliente);
@@ -1798,7 +1826,7 @@ function processFormData(form) {
             }
             for(let cell of row.cells) {
                 let value = cell.innerText;
-                j[y - 1][x] = value.replace('"', '\\"').replace('\t', '');
+                j[y - 1][x] = (value ? value.replace('"', '\\"').replace('\t', '') : '');
                 x++;
             }
             x = 0;
