@@ -1,3 +1,10 @@
+/**
+ * Library to insert auto-completion functionality with JQuery-ui to any text input control.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
+
 function bindSeekers(element = null, binder = null) {
     var process = function (sElement) {
         //if (!sElement.is(':visible') && sElement.attr('name') != 'search') return;
