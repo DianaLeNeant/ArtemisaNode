@@ -1,3 +1,12 @@
+/**
+ * Artemisa REST API.
+ *
+ * REST API script for external communication.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
+
 function secureParse(str) {
     if (!str) return undefined;
     var s = str.replace('\t', '');
