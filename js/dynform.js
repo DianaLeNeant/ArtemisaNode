@@ -1,4 +1,9 @@
-// dynamic control class
+/**
+ * Dynamic controls library.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
 
 function applyDynForm() {
     var a_source = [];
