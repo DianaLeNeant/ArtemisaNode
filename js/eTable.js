@@ -1,3 +1,10 @@
+/**
+ * Dynamic controls table library.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
+
 function bind_eTables() {
     $('body').find('.editable').each(function() {
         var etable = $(this);
