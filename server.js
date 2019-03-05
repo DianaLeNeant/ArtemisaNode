@@ -1,7 +1,11 @@
-/*
-        TODO:
-            --- Make edition forms processing base ... there are more!!
-*/
+/**
+ * Server main file.
+ *
+ * Here lies the whole server core.
+ *
+ * @link   https://github.com/DianaLeNeant/ArtemisaNode
+ * @author Diana Celeste Nuño Ramírez. 2018.
+ */
 
 // includes
 var lpath = __dirname + "/";
@@ -62,7 +66,7 @@ console.log("Use '--port {port number}' parameter to listen to a different port.
 process.argv.forEach(function (val, index, array) {
     if (val == '--console') {
         conA = true;
-        console.log("command input activated".cyan);
+        console.log('command input activated'.cyan);
     }
     if (val == '--port') {
         port = Number(array[index + 1]);
@@ -75,8 +79,8 @@ if (conA) {
 }
 
 // definitions
-var html_h = files.readFileSync("default/header.html", "utf8"); // global header
-var html_f = files.readFileSync("default/footer.html", "utf8"); // global footer
+var html_h = files.readFileSync('default/header.html', 'utf8'); // global header
+var html_f = files.readFileSync('default/footer.html', 'utf8'); // global footer
 
 var actual_security_key = 'artemisa_pass';
 var last_security_key = 'artemisa_pass';
@@ -257,21 +261,23 @@ function secureParse(str) {
 }
 function reminders() {
     var dayStartsAt = Number(consultConfiguration('server', 'dayStart'));
-    if (moment().hour() == dayStartsAt && !uReset) {
-        query('SELECT ID, Acceso FROM usuarios;', function(loginRes) {
-            if (loginRes) { if (loginRes.length > 0) {
-                for (let x = 0; x < loginRes.length; x++) {
-                    if (!artemisa.consultAreas(loginRes[x].Acceso).isAbsent) {
-                        query(`UPDATE usuarios SET Acceso = '${String(loginRes[x].Acceso)};absent' WHERE ID = '${loginRes[x].ID}';`)
+    if (moment().weekday() < 5) {
+        if (moment().hour() == dayStartsAt && !uReset) {
+            query('SELECT ID, Acceso FROM usuarios;', function(loginRes) {
+                if (loginRes) { if (loginRes.length > 0) {
+                    for (let x = 0; x < loginRes.length; x++) {
+                        if (!artemisa.consultAreas(loginRes[x].Acceso).isAbsent) {
+                            query(`UPDATE usuarios SET Acceso = '${String(loginRes[x].Acceso)};absent' WHERE ID = '${loginRes[x].ID}';`)
+                        }
                     }
-                }
-            }}
-        });
-        uReset = true;
-    } else {
-        if (moment().hour() > dayStartsAt || moment().hour() < dayStartsAt) uReset = false;
-        artemisa.cLog('-----> !!! Day started at ' + Number(consultConfiguration('server', 'dayStart')) + ' or users have been yet reset. Users will stay at the same absent status before.');
-        return;
+                }}
+            });
+            uReset = true;
+        } else {
+            if (moment().hour() > dayStartsAt || moment().hour() < dayStartsAt) uReset = false;
+            artemisa.cLog('-----> !!! Day started at ' + Number(consultConfiguration('server', 'dayStart')) + ' or users have been yet reset. Users will stay at the same absent status before.');
+            return;
+        }
     }
 
     var from = moment().seconds(0).format('YYYY-MM-DD HH:mm:ss').toString();
@@ -351,8 +357,8 @@ https.listen(port, function() {
 server.use(bodyParser.json()); // support json encoded bodies
 server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 server.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
 
@@ -372,7 +378,7 @@ if (conA) {
     })();
 
     rl.on('line', function(line) {
-        if (line === "end.") rl.close();
+        if (line === 'end.') rl.close();
         if (line === 'help.') {
             artemisa.cLog(
                 '---: Artemisa Server Command List :---\n\n' +
@@ -518,7 +524,7 @@ function checkSession(session) {
         artemisa.cLog(`         -::! ${JSON.stringify(session)}`)
         return false;
     } else {
-        if (secureParse(session.user_info.Nombre)[0] == "{ not logged in }") return false;
+        if (secureParse(session.user_info.Nombre)[0] == '{ not logged in }') return false;
         return true;
     }
 }
@@ -676,7 +682,7 @@ function emitExactNotification(fromUser, to, message, data, insert = false) {
                             } else {
                                 return false;
                             }
-                        })
+                        });
                     } else {
                         query(`UPDATE notificaciones SET RAW = '${JSON.stringify(data)}', Mensaje = '${message}' WHERE Destino = '${JSON.stringify(to)}' AND Creador = '${resU[0].ID}' AND Fecha = '${datetimeSQL(today)}';`,
                         function(inres) {
@@ -686,7 +692,7 @@ function emitExactNotification(fromUser, to, message, data, insert = false) {
                             } else {
                                 return false;
                             }
-                        })
+                        });
                     }
                 });
             }
@@ -1379,7 +1385,7 @@ io.on('connection', function (socket) {
                         if (result) {
                             if (result.length > 0) {
                                 if (artemisa.sessionExists(from)) {
-                                    if (!artemisa.consultAreas(result[0].Acceso).isOnArea(area) && !artemisa.consultAreas(result[0].Acceso).isOnArea("total")) {
+                                    if (!artemisa.consultAreas(result[0].Acceso).isOnArea(area) && !artemisa.consultAreas(result[0].Acceso).isOnArea('total')) {
                                         fn({
                                             message: 'Acceso denegado',
                                             success: false
@@ -2181,7 +2187,7 @@ function getTotal(bodyItems) {
  * @param {String} logo Logo ID (commonly 'req.body.logo').
  * @param {Array} headers Header names to replace at invoice product table.
  */
-function documentObject(body, resultc, resultb, from, invoiceID = '1', logo = '1', headers = ['ID', 'Cantidad', 'Clave Interna', 'Marca', 'Descripción', 'Precio', 'IVA', 'Subtotal']) {
+function documentObject(body, resultc, resultb, from, invoiceID = '1', logo = '1', headers = ['ID', 'Cantidad', 'Clave Interna', 'Marca', 'Descripción', 'Precio', 'IVA', 'Subtotal', 'Información Extra']) {
     var docuO = body;
     var udata = artemisa.sessions[from].user_info;
     docuO.logo = logo;
@@ -2201,7 +2207,11 @@ function documentObject(body, resultc, resultb, from, invoiceID = '1', logo = '1
     var tot = 0;
     for (let it = 0; it < itms.length; it++) {
         if (itms[it].length < 1) continue;
-        docuO.items.push([itms[it][0], itms[it][6], itms[it][1], itms[it][2], itms[it][3], itms[it][4], itms[it][5], '']);
+        if (itms[it].length > 7) {
+            docuO.items.push([itms[it][0], itms[it][6], itms[it][1], itms[it][2], itms[it][3], itms[it][4], itms[it][5], '', itms[it][7]]);
+        } else {
+            docuO.items.push([itms[it][0], itms[it][6], itms[it][1], itms[it][2], itms[it][3], itms[it][4], itms[it][5], '', '']);
+        }
         var iv = docuO.items[docuO.items.length - 1][6];
         if (!isNaN(docuO.items[docuO.items.length - 1][5])) {
             var itv = Number(docuO.items[docuO.items.length - 1][5]) * Number(docuO.items[docuO.items.length - 1][1])
@@ -2495,9 +2505,9 @@ server.post('/postAsk', upload.any(), function(req, res) {
                                     docuGen('ask', docuO, `Cotizacion${docuO.dserial}`, function(durl) {
                                         var pSeguimiento = secureParse(resultc[0].Seguimiento);
                                         if (pSeguimiento) {
-                                            pSeguimiento[pSeguimiento.length] = new Array("Cotizando",`Nueva cotización con folio ${docuO.dserial}`);
+                                            pSeguimiento[pSeguimiento.length] = new Array('Cotizando',`Nueva cotización con folio ${docuO.dserial}`);
                                         } else {
-                                            pSeguimiento = [["Cotizando",`Nueva cotización con folio ${docuO.dserial}`]];
+                                            pSeguimiento = [['Cotizando',`Nueva cotización con folio ${docuO.dserial}`]];
                                         }
                                         query(`UPDATE cmm_clientes SET Seguimiento = '${JSON.stringify(pSeguimiento)}' WHERE ID = '${client}'`);
 
@@ -3315,7 +3325,7 @@ function autoAsign(data, asigned, sms = true) {
             return;
         }
         var squery = `SELECT ID, Nombre, Empresas, Telefono, Correo, Acceso FROM usuarios WHERE Empresas LIKE '%"${ent}"%' AND Acceso LIKE 'sales%' AND NOT Acceso LIKE 'salesu%' AND NOT Acceso LIKE '%ger%' AND NOT Acceso LIKE '%absent' AND NOT Acceso LIKE '%restricted%' ${extra.includes('OR') ? extra : 'AND ' + extra};`;
-        if (String(prod).toLowerCase().includes('ultraso') || ultrasource) {
+        if (String(prod).toLowerCase().includes('ultrasonido') || ultrasource) {
             squery = `SELECT ID, Nombre, Empresas, Telefono, Correo, Acceso FROM usuarios WHERE Empresas LIKE '%"${ent}"%' AND Acceso LIKE 'salesu%' AND NOT Acceso LIKE '%ger%' AND NOT Acceso LIKE '%absent' AND NOT Acceso LIKE '%restricted%' ${extra.includes('OR') ? extra : 'AND ' + extra};`;
         }
 
